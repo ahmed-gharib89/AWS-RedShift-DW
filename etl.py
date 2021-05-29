@@ -5,6 +5,9 @@ from sql_queries import copy_table_queries, insert_table_queries
 
 
 def load_staging_tables(cur, conn):
+    """
+    Connect to the redshift database and copy the data from S3 into the staging tables
+    """
     start = time()
     print('Start copying the data into staging_tables')
     print('-' * 30)
@@ -28,6 +31,9 @@ def load_staging_tables(cur, conn):
 
 
 def insert_tables(cur, conn):
+    """
+    Connect to the redshift database and insert the data into the final tables from the staging tables
+    """
     start = time()
     print('Start Inserting the data into tables')
     print('-' * 30)
